@@ -1,0 +1,1 @@
+web: gunicorn buy.wsgi --log-file -

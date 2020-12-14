@@ -1,0 +1,153 @@
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Buy Or Not</title>
+    <meta name="description" content="This is the first online product recommendation platform.">
+    <link rel="stylesheet" href={%static "assets/bootstrap/css/bootstrap.min.css"%}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
+    <link rel="stylesheet" href={%static  "assets/fonts/font-awesome.min.css"%}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href={%static "assets/css/untitled.css"%}>
+    <link rel="icon" type="image" href={%static "asets/img/Distrack.ico"%}>
+</head>
+
+<body class="text-center" id="page-top">
+    {% block 'content' %}
+    {% endblock 'content' %}
+    <header class="masthead text-center text-white d-flex" style="background-image:url('static/assets/img/header2.jpg');">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="text-uppercase bg-transparent-faded" data-aos="fade-right" data-aos-duration="3000"><strong> Your Product's Recommandation: </strong></h2>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase bg-transparent-faded" data-aos="fade-left" data-aos-duration="3000"><strong>{{output_text}} </strong></h1>
+                    <hr>
+                </div>
+            
+    </header>
+    <section class="text-center bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col offset-lg-8 mx-auto text-center" style="width: 1196px;height: 177px;">
+                    <h1 class="display-4 text-white section-heading">Enter the product link from Amazon.in</h1>
+                    <hr class="light my-4">
+                </div>
+            </div>
+        </div>
+        <div id="linkbar " style="padding-top:80px;">
+            <form action='/submit' method='get'>
+                <div>
+                    <input type='text' name='link' placeholder='amazon.in/product-name/' style="margin: 30px; width:70%; height: 60px; border-radius: 5px;"> 
+                    <br><button class='btn btn-light btn-xl' type='submit'>Submit</button>
+                </div>
+            </form>
+        </div>    
+        </section>
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Upcoming Features</h2>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="mx-auto service-box mt-5"><i class="fa fa-diamond fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>
+                        <h3 class="mb-3">String Algorithm</h3>
+                        <p class="text-muted mb-0">Our algorithms are updated regularly so they don't break.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="mx-auto service-box mt-5"><i class="fa fa-paper-plane fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="200" data-aos-once="true"></i>
+                        <h3 class="mb-3">Ready to Give Best Suggestion</h3>
+                        <p class="text-muted mb-0">You can use us for getting best ever suggestions</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="mx-auto service-box mt-5"><i class="fa fa-newspaper-o fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="400" data-aos-once="true"></i>
+                        <h3 class="mb-3">Up to Date</h3>
+                        <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="mx-auto service-box mt-5"><i class="fa fa-heart fa-4x text-primary mb-3 sr-icons" data-aos="fade" data-aos-duration="200" data-aos-delay="600" data-aos-once="true"></i>
+                        <h3 class="mb-3">Made with Love</h3>
+                        <p class="text-muted mb-0">Purely Made in india</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="p-0">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/b?ie=UTF8&node=21676199031&store_ref=SB_A00974722GK2IV2E58YDM&pf_rd_p=51d30e03-5d7e-4ece-a66b-e1933e77766c&aaxitk=EAnnqOOP7Ebm4dcO73bOAw&hsa_cr_id=2663646780202&lp_mat_key=nord&lp_query=nord&lp_slot=auto-sparkle-hsa-tetris&ref_=sbx_be_s_sparkle_nafd_hl'}><img class="img-fluid" src={% static "assets/img/thumbnails/1.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>OnePlus Nord 5g</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
+                <div
+                    class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/Mi-Router-high-Performance-Antenna-Control/dp/B0843YGQWS/ref=sr_1_1?dchild=1&keywords=mi+4c&qid=1607954178&s=electronics&sr=1-1'><img class="img-fluid" src={% static  "assets/img/thumbnails/2.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Mi Smart Router 4C</span></div><div class="project-name"><span>You can buy if you need it badly</span></div></div></div></a></div>
+            <div
+                class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/ASUS-i5-1035G1-15-6-inch-Integrated-X512JA-EJ851T/dp/B08HHBVTJM/ref=sr_1_1_sspa?crid=3CGUJG6814S2Y&dchild=1&keywords=asus+vivobook&qid=1607954339&s=electronics&sprefix=asus+viv%2Celectronics%2C324&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExQzE2VEJLT01PQkVDJmVuY3J5cHRlZElkPUEwMjk5MjcySzcyTzI5SDNEUDNTJmVuY3J5cHRlZEFkSWQ9QTA1MDU3MDM0RkEwT05GRVJMOFAmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl'><img class="img-fluid" src= {%static "assets/img/thumbnails/3.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>ASUS VivoBook 15</span></div><div class="project-name"><span>Product is highly recommanded</span></div></div></div></a></div>
+        <div
+            class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/Echo-Dot-3rd-Gen/dp/B07PFFMP9P/ref=sr_1_2?dchild=1&keywords=echo+dot&qid=1607954472&s=electronics&sr=1-2'><img class="img-fluid" src= {%static "assets/img/thumbnails/4.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Echo Dot (3rd Gen)</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
+            <div
+                class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/Redmi-Prime-Storage-Display-Camera/dp/B08696XM8J/ref=sr_1_2?dchild=1&keywords=redmi+9+prime&qid=1607955367&s=electronics&sr=1-2'><img class="img-fluid" src={%static "assets/img/thumbnails/5.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Redmi 9 Prime</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
+                <div
+                    class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/SKAFA-Dog-Shaped-Computer-nightstand-Children/dp/B08HQ1KGYD/ref=sr_1_4?dchild=1&fst=as%3Aoff&pf_rd_p=83aa3366-92f6-414c-a4fd-d65742d3cb8a&pf_rd_r=ZF0NBBMJNAFA5W160WNK&qid=1583227118&refinements=p_n_format_browse-bin%3A19560800031&rnid=14019568031&s=kitchen&sr=1-4'><img class="img-fluid" src={%static "assets/img/thumbnails/6.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>SKAFA Wooden Dog-Shaped lamp</span></div><div class="project-name"><span>Product is not recommanded</span></div></div></div></a></div>
+                    </div>
+                    </div>
+    </section>
+    <section class="bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Android Application Of Buy Or Not</h2><a class="btn btn-light btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="#">Coming Soon!</a></div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="my-4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 ml-auto text-center"><i class="fa fa-phone fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-once="true"></i>
+                    <p>9891641183</p>
+                </div>
+                <div class="col-lg-4 mr-auto text-center"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300" data-aos-once="true"></i>
+                    <p><a href="mailto:your-email@your-domain.com">contact@buyornot.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src={%static "assets/js/jquery.min.js"%}></script>
+    <script src={%static "assets/bootstrap/js/bootstrap.min.js"%}></script>
+    <script src={%static "assets/js/bs-init.js"%}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src={%static "assets/js/creative.js"%}></script>
+
+
+<footer class="page-footer bg-primary font-small blue pt-2">
+
+ 
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a style="color: white;" href="https://instagram.com/shubh._am"> Shubham Chauhan</a>
+  </div>
+
+
+</footer>
+
+</body>
+
+</html>
