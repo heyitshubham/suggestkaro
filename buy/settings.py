@@ -24,8 +24,7 @@ SECRET_KEY = '0s#tts%dsxew8dqp(luxacnht*6*=_$vklbo)*q#v)=h+n0_nc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ["kharido.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["suggestkaro.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
