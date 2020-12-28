@@ -20,11 +20,24 @@
 <body class="text-center" id="page-top">
     {% block 'content' %}
     {% endblock 'content' %}
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert bg-dark alert-{{ message.tags }} alert-dismissible my-0" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
     <header class="masthead text-center text-white d-flex" style="background-image:url('static/assets/img/header2.jpg');">
         <div class="container my-auto">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="text-uppercase bg-transparent-faded" data-aos="fade-right" data-aos-duration="3000"><strong> Your Product's Recommandation: </strong></h2>
+                    <h2 class="text-uppercase bg-transparent-faded" data-aos="fade-right" data-aos-duration="3000"><strong>{{mesg}} </strong></h2>
                     <hr>
                 </div>
             </div>
@@ -45,7 +58,8 @@
             </div>
         </div>
         <div id="linkbar " style="padding-top:80px;">
-            <form action='/submit' method='get'>
+            <form action='/submit' method='post'>
+            {% csrf_token %}
                 <div>
                     <input type='text' name='link' placeholder='amazon.in/product-name/' style="margin: 30px; width:70%; height: 60px; border-radius: 5px;"> 
                     <br><button class='btn btn-light btn-xl' type='submit'>Submit</button>
@@ -148,6 +162,8 @@
 
 
 </footer>
+
+
 
 </body>
 

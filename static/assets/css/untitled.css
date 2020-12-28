@@ -1,6 +1,6 @@
-[type=search] {
+section{
+  padding: 2rem 0;
 }
-
 #linkbar {
   padding: 48px;
 }
@@ -9,3 +9,16 @@
   padding: 30 px;
 }
 
+#video{
+  position: relative;
+  /* width: 100%; */
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.tutvideo iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 50%;
+  height: 60%;
+}

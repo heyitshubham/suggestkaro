@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from bs4 import BeautifulSoup as bs
 import requests
+from django.contrib import messages
+from django.shortcuts import get_object_or_404, render
 
 def index(request):
     return render(request,'index.html')
@@ -11,14 +13,20 @@ def index(request):
 
 def submit(request):
     #djlink=(request.GET.get('link','You entered an incorrect link'))
+    output_text="Please check your copied link once again!!"
+    show='Hey there!'
+    ptcl="https://www.amazon.in/"
 
-    link = (request.GET.get('link','You entered an incorrect link'))
+    link1 = (request.POST.get('link'))
+    link2=link1
+    if ptcl in link2:
+        print("jug jug jio")
 
-    shrt=link.split("ref")
+    shrt=link2.split("ref")
     url=shrt[0]
 
     pr_url=url.replace("/dp/","/product-reviews/") 
-    print(pr_url)
+    # print(pr_url)
 
     page = requests.get(pr_url)
 
@@ -51,11 +59,20 @@ def submit(request):
     a = star_rating
 
     listToStr = ' '.join(map(str, a))
-    output_text=convert(listToStr)
-    #print(output_text)
+    if  listToStr:
+        
+        output_text=convert(listToStr)
+        show=" Your Product's Recommandation:"
+        
+        #print(output_text)
+      
     analyzed=output_text
-    params={'output_text':analyzed}
-    return render(request,'output.html',params)
+    params={
+        'output_text':analyzed,
+        'mesg':show
+    }
+
+    return render(request,'output.html',params)    
 
 def about(request):
     #print(request.GET.get('text'))

@@ -7,22 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Suggestkaro- HomePage</title>
     <meta name="description" content="This is the first online product recommendation platform.">
-    <link rel="stylesheet" href={%static "assets/bootstrap/css/bootstrap.min.css"%}>
+    <link rel="stylesheet" href="{%static "assets/bootstrap/css/bootstrap.min.css"%}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
-    <link rel="stylesheet" href={%static  "assets/fonts/font-awesome.min.css"%}>
+    <link rel="stylesheet" href="{%static  "assets/fonts/font-awesome.min.css"%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-    <link rel="stylesheet" href={%static "assets/css/untitled.css"%}>
-    <link rel="icon" type="image" href={%static "assets/img/buy.png"%}>
+    <link rel="stylesheet" href="{%static "assets/css/untitled.css"%}">
+    <link rel="icon" type="image" href="{%static "assets/img/buy.png"%}">
     <script data-ad-client="ca-pub-3577465712114236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
+
+
 
 <style>
 body
 {
     
     background-attachment: fixed;
+}
+
+
+.iframe-container{
+  position: relative;
+  /* width: 100%; */
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 75%;
+    margin-left: 10%;
+    margin-right: 20%;
+    display: block
+}
+
+#services{
+    padding-top: 3rem;
 }
 </style>
 
@@ -34,9 +58,11 @@ body
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Get Recommendation</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tutorial">Tutorial</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Features</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Suggestions</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -66,17 +92,38 @@ body
                 </div>
             </div>
         </div>
+            {% comment %} <div class='text-center col offset-lg text-white'> 
+                Note: Please make sure entered URL is from Amazon.in 
+            </div> {% endcomment %}
         <div id="linkbar " style="padding-top:80px;">
-            <form action='/submit' method='get'>
+            <form action='/submit' method='post'>
+            {% csrf_token %}
                 <div>
-                    <input type='text' name='link' placeholder='amazon.in/product-name/' style="margin: 30px; width:70%; height: 60px; border-radius: 5px;"> 
+                    <input type='text' name='link' placeholder='https://www.amazon.in/Product-name/dp/' style="margin: 30px; width:70%; height: 60px; border-radius: 5px;"> 
                     <br><button class='btn btn-light btn-xl' type='submit'>Submit</button>
                 </div>
             </form>
         </div>    
+
+
+
+
     </section>
-    <section id="services">
-        <div class="container">
+    <section id="tutorial">
+
+                    <div class="col-lg-12 text-center" style="top:3rem;">
+                        <h2 class="section-heading">Tutorial</h2>
+                        <hr class="my-4">
+                        <div class="iframe-container" >
+                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x_PuXKELljE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>    
+        
+                            
+                    </div>
+    </section>
+  
+    <section id="services" style="top:5rem;" >
+        <div class="container ">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Features</h2>
@@ -161,6 +208,8 @@ body
     <script src={%static "assets/js/creative.js"%}></script>
 
 
+
+
 <footer class="page-footer bg-primary font-small blue pt-2">
 
  
@@ -172,5 +221,7 @@ body
 </footer>
 
 </body>
+
+
 
 </html>
