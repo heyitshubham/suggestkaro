@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Error- Suggestkaro</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
+    <link rel="icon" type="image" href="{%static "assets/img/buy.png"%}">
+    <link rel="stylesheet" href="{%static "/assets/css/style.css"%}">
+
+	<link rel="stylesheet" href="{%static "assets/bootstrap/css/bootstrap.min.css"%}">
+    <link rel="stylesheet" href="{%static  "assets/fonts/font-awesome.min.css"%}">
+    <link rel="stylesheet" href="{%static "assets/css/untitled.css"%}">
+    <link rel="icon" type="image" href="{%static "assets/img/buy.png"%}">
+
+</head>
+
+<style>
+
+    .iframe-container{
+        position: relative;
+        /* width: 100%; */
+        padding-bottom: 56.25%; 
+        height: 0;
+    }
+    .iframe-container iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 75%;
+        height: 75%;
+            margin-left: 10%;
+            margin-right: 20%;
+            display: block
+    }
+
+  
+</style>
+
+
+
+<body>
+
+	<div id="notfound">
+		<div class="notfound">
+			<div class="notfound-404">
+				<h1>Oops!</h1>
+				<h2>You entered an incorrect URL</h2>
+			</div>
+			<a href="{% url 'home' %}">Go TO Homepage</a>
+				{% comment %} <div class="img">
+					<img src="{%static "assets/img/smile.svg"%}" />
+				</div> {% endcomment %}
+		</div>
+	</div>
+
+	<section id="tutorial">
+
+                    <div class="col-lg-12 text-center" style="top:1rem;">
+                        <h2 class="section-heading">Please refer to the tutorial</h2>
+                        <hr class="my-4">
+                        <div class="iframe-container" >
+                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x_PuXKELljE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>    
+        
+                            
+                    </div>
+    </section>
+
+
+</body>
+
+</html>
