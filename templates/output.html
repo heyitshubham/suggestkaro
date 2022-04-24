@@ -39,6 +39,19 @@
     #features{
         padding-top: 3rem;
     }
+    .text-uppercase{
+        color: black;
+   
+    }
+    hr{
+        border-color: #111111;
+        border-top-color: rgb(19, 19, 19);
+        border-right-color: rgb(8, 8, 8);
+        border-bottom-color: rgb(29, 28, 28);
+        border-left-color: rgb(19, 18, 18);
+        
+    }
+
 </style>
 
 <body class="text-center" id="page-top">
@@ -57,19 +70,27 @@
     {% endif %}
 
 
-    <header class="masthead text-center text-white d-flex" style="background-image:url('static/assets/img/header2.jpg');">
-        <div class="container my-auto">
+    <header class="masthead d-flex" style="background-image:url('static/assets/img/header2.jpg'); ">
+        <div class="container" >
             <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h2 class="text-uppercase bg-transparent-faded" data-aos="fade-right" data-aos-duration="3000"><strong>{{mesg}} </strong></h2>
-                    <hr>
+                <div class="col">
+                    <h2 class="text-uppercase bg-transparent-faded" style="padding-left: 50%; padding-top: 5rem;"  data-aos="fade-right" data-aos-duration="3000"><strong>{{mesg}} </strong><hr></h2>
+                   
                 </div>
             </div>
 
+            <div class="col">
+                    <h1 class="text-uppercase  bg-transparent-faded" style='padding-left: 50%;' data-aos="fade-left" data-aos-duration="3000"><strong>{{output_text}} </strong><hr></h1>
+                    
+            </div>
+<!--             
             <div class="col-lg-10 mx-auto">
-                    <h1 class="text-uppercase bg-transparent-faded" data-aos="fade-left" data-aos-duration="3000"><strong>{{output_text}} </strong></h1>
-                    <hr>
-                </div>
+                <h2 class="text-uppercase bg-transparent-faded" data-aos="fade-left" data-aos-duration="3000"><strong>{{why}} </strong></h2>
+                <hr>
+        </div> -->
+
+        </div>
+                
             
     </header>
     <section class="text-center bg-primary" id="about">
@@ -136,20 +157,20 @@
             </div>
         </div>
     </section>
-    <section id="suggestions" class="p-0">
+    <section id="portfolio" class="p-0">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
-                <div class="col-sm-6 col-lg-4"><a class="suggestions-box" href='https://www.amazon.in/b?ie=UTF8&node=21676199031&store_ref=SB_A00974722GK2IV2E58YDM&pf_rd_p=51d30e03-5d7e-4ece-a66b-e1933e77766c&aaxitk=EAnnqOOP7Ebm4dcO73bOAw&hsa_cr_id=2663646780202&lp_mat_key=nord&lp_query=nord&lp_slot=auto-sparkle-hsa-tetris&ref_=sbx_be_s_sparkle_nafd_hl'}><img class="img-fluid" src={% static "assets/img/thumbnails/1.jpg"%}><div class="suggestions-box-caption"><div class="suggestions-box-caption-content"><div class="project-category text-faded"><span>OnePlus Nord 5g</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
+                <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/b?ie=UTF8&node=21676199031&store_ref=SB_A00974722GK2IV2E58YDM&pf_rd_p=51d30e03-5d7e-4ece-a66b-e1933e77766c&aaxitk=EAnnqOOP7Ebm4dcO73bOAw&hsa_cr_id=2663646780202&lp_mat_key=nord&lp_query=nord&lp_slot=auto-sparkle-hsa-tetris&ref_=sbx_be_s_sparkle_nafd_hl'}><img class="img-fluid" src={% static "assets/img/thumbnails/1.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>OnePlus Nord 5g</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
                 <div
-                    class="col-sm-6 col-lg-4"><a class="suggestions-box" href='https://www.amazon.in/Mi-Router-high-Performance-Antenna-Control/dp/B0843YGQWS/ref=sr_1_1?dchild=1&keywords=mi+4c&qid=1607954178&s=electronics&sr=1-1'><img class="img-fluid" src={% static  "assets/img/thumbnails/2.jpg"%}><div class="suggestions-box-caption"><div class="suggestions-box-caption-content"><div class="project-category text-faded"><span>Mi Smart Router 4C</span></div><div class="project-name"><span>You can buy if you need it badly</span></div></div></div></a></div>
+                    class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/Mi-Router-high-Performance-Antenna-Control/dp/B0843YGQWS/ref=sr_1_1?dchild=1&keywords=mi+4c&qid=1607954178&s=electronics&sr=1-1'><img class="img-fluid" src={% static  "assets/img/thumbnails/2.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Mi Smart Router 4C</span></div><div class="project-name"><span>You can buy if you need it badly</span></div></div></div></a></div>
             <div
-                class="col-sm-6 col-lg-4"><a class="suggestions-box" href='https://www.amazon.in/ASUS-i5-1035G1-15-6-inch-Integrated-X512JA-EJ851T/dp/B08HHBVTJM/ref=sr_1_1_sspa?crid=3CGUJG6814S2Y&dchild=1&keywords=asus+vivobook&qid=1607954339&s=electronics&sprefix=asus+viv%2Celectronics%2C324&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExQzE2VEJLT01PQkVDJmVuY3J5cHRlZElkPUEwMjk5MjcySzcyTzI5SDNEUDNTJmVuY3J5cHRlZEFkSWQ9QTA1MDU3MDM0RkEwT05GRVJMOFAmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl'><img class="img-fluid" src= {%static "assets/img/thumbnails/3.jpg"%}><div class="suggestions-box-caption"><div class="suggestions-box-caption-content"><div class="project-category text-faded"><span>ASUS VivoBook 15</span></div><div class="project-name"><span>Product is highly recommanded</span></div></div></div></a></div>
+                class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/ASUS-i5-1035G1-15-6-inch-Integrated-X512JA-EJ851T/dp/B08HHBVTJM/ref=sr_1_1_sspa?crid=3CGUJG6814S2Y&dchild=1&keywords=asus+vivobook&qid=1607954339&s=electronics&sprefix=asus+viv%2Celectronics%2C324&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExQzE2VEJLT01PQkVDJmVuY3J5cHRlZElkPUEwMjk5MjcySzcyTzI5SDNEUDNTJmVuY3J5cHRlZEFkSWQ9QTA1MDU3MDM0RkEwT05GRVJMOFAmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl'><img class="img-fluid" src= {%static "assets/img/thumbnails/3.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>ASUS VivoBook 15</span></div><div class="project-name"><span>Product is highly recommanded</span></div></div></div></a></div>
         <div
-            class="col-sm-6 col-lg-4"><a class="suggestions-box" href='https://www.amazon.in/Echo-Dot-3rd-Gen/dp/B07PFFMP9P/ref=sr_1_2?dchild=1&keywords=echo+dot&qid=1607954472&s=electronics&sr=1-2'><img class="img-fluid" src= {%static "assets/img/thumbnails/4.jpg"%}><div class="suggestions-box-caption"><div class="suggestions-box-caption-content"><div class="project-category text-faded"><span>Echo Dot (3rd Gen)</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
+            class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/Echo-Dot-3rd-Gen/dp/B07PFFMP9P/ref=sr_1_2?dchild=1&keywords=echo+dot&qid=1607954472&s=electronics&sr=1-2'><img class="img-fluid" src= {%static "assets/img/thumbnails/4.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Echo Dot (3rd Gen)</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
             <div
-                class="col-sm-6 col-lg-4"><a class="suggestions-box" href='https://www.amazon.in/Redmi-Prime-Storage-Display-Camera/dp/B08696XM8J/ref=sr_1_2?dchild=1&keywords=redmi+9+prime&qid=1607955367&s=electronics&sr=1-2'><img class="img-fluid" src={%static "assets/img/thumbnails/5.jpg"%}><div class="suggestions-box-caption"><div class="suggestions-box-caption-content"><div class="project-category text-faded"><span>Redmi 9 Prime</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
+                class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/Redmi-Prime-Storage-Display-Camera/dp/B08696XM8J/ref=sr_1_2?dchild=1&keywords=redmi+9+prime&qid=1607955367&s=electronics&sr=1-2'><img class="img-fluid" src={%static "assets/img/thumbnails/5.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Redmi 9 Prime</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
                 <div
-                    class="col-sm-6 col-lg-4"><a class="suggestions-box" href='https://www.amazon.in/SKAFA-Dog-Shaped-Computer-nightstand-Children/dp/B08HQ1KGYD/ref=sr_1_4?dchild=1&fst=as%3Aoff&pf_rd_p=83aa3366-92f6-414c-a4fd-d65742d3cb8a&pf_rd_r=ZF0NBBMJNAFA5W160WNK&qid=1583227118&refinements=p_n_format_browse-bin%3A19560800031&rnid=14019568031&s=kitchen&sr=1-4'><img class="img-fluid" src={%static "assets/img/thumbnails/6.jpg"%}><div class="suggestions-box-caption"><div class="suggestions-box-caption-content"><div class="project-category text-faded"><span>SKAFA Wooden Dog-Shaped lamp</span></div><div class="project-name"><span>Product is not recommanded</span></div></div></div></a></div>
+                    class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/SKAFA-Dog-Shaped-Computer-nightstand-Children/dp/B08HQ1KGYD/ref=sr_1_4?dchild=1&fst=as%3Aoff&pf_rd_p=83aa3366-92f6-414c-a4fd-d65742d3cb8a&pf_rd_r=ZF0NBBMJNAFA5W160WNK&qid=1583227118&refinements=p_n_format_browse-bin%3A19560800031&rnid=14019568031&s=kitchen&sr=1-4'><img class="img-fluid" src={%static "assets/img/thumbnails/6.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>SKAFA Wooden Dog-Shaped lamp</span></div><div class="project-name"><span>Product is not recommanded</span></div></div></div></a></div>
                     </div>
                     </div>
     </section>

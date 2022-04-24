@@ -15,10 +15,10 @@ def submit(request):
     #djlink=(request.GET.get('link','You entered an incorrect link'))
     output_text="Please check your copied link once again!!"
     show='Hey there!'
-    ptcl="https://www.amazon.in/"
+    # ptcl="https://www.amazon.in/"
 
     link1 = (request.POST.get('link'))
-    print(link1)
+    # print(link1)
     link2=link1
     # if ptcl in link2:
     #     print("jug jug jio")
@@ -49,7 +49,6 @@ def submit(request):
 
         def convert(string):
             li = list(string.split())
-            #print(li)
             com = li[0]
             if com >= str(4.5):
                 return("Product is highly recommended \nSo you can buy right now 😍")
@@ -63,17 +62,40 @@ def submit(request):
         a = star_rating
 
         listToStr = ' '.join(map(str, a))
+        print(listToStr)
         if  listToStr:
             
             output_text=convert(listToStr)
-            show=" Your Product's Recommandation:"
+            show="Your Product's Recommandation:"
             
             #print(output_text)
+
+        def why(string):
+            li = list(string.split())
+            com = li[0]
+            if com >= str(4.5):
+                return("Why you've to buy right now?")
+            elif com >= str(4) and com <= str(4.5):
+                return("Why you've to buy?")
+            elif com >= str(3) and com <= str(3.5):
+                return("Why you have to buy when you badly need it?")
+            else:
+                return("Why you don't have to buy?")
+
+        if  listToStr:
+            
+            review_text=why(listToStr)
+                
+        
+            
+           
         
         analyzed=output_text
+        analyzed2=review_text
         params={
             'output_text':analyzed,
-            'mesg':show
+            'mesg':show,
+            'why':analyzed2
         }
 
     except:

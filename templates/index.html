@@ -34,26 +34,52 @@
         left: 0;
         width: 75%;
         height: 75%;
-            margin-left: 10%;
-            margin-right: 20%;
-            display: block
+        margin-left: 10%;
+        margin-right: 20%;
+        display: block
     }
 
     #features{
         padding-top: 3rem;
     }
+
+    .container{
+        padding-top: 10px;
+    }
+
+    header.masthead    
+    {
+        height: 10vh;
+        min-height: 650px;
+        padding-top: 0;
+        padding-bottom: 0;
+        background-image:url('static/assets/img/header.jpg');
+
+    }
+    
+    .text{
+        color: green;
+    }
+    hr{
+        border-color: #111111;
+        border-top-color: rgb(19, 19, 19);
+        border-right-color: rgb(8, 8, 8);
+        border-bottom-color: rgb(29, 28, 28);
+        border-left-color: rgb(19, 18, 18);
+    }
+
+    
 </style>
 
 <body class="text-center" id="page-top">
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+    <nav class="navbar navbar-light bg-dark navbar-expand-lg fixed-top"  id="mainNav">
         <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Suggestkaro</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Get Recommendation</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tutorial">Tutorial</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Suggestions</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#sugest">Suggestions</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     
                 </ul>
@@ -61,58 +87,50 @@
         </div>
     </nav>
 
-    <header class="masthead text-center text-white d-flex" style="background-image:url('static/assets/img/header.jpg');">
-        <div class="container my-auto">
+    <header class="masthead d-flex" style=" margin-left: 5%; margin-right: 0; overflow-x: hidden;" >
+        <div class="my-auto" style="padding-top: 3rem;">
             <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h1 class="text-uppercase bg-style-slide" data-aos="fade-up" data-aos-duration="3000"><strong>Stop being confused. Start shopping with us!</strong></h1>
-                    <hr>
+                <div class="col ">
+                    <h3 class="text-uppercase" style="color: midnightblue;" data-aos="fade-up" data-aos-duration="3000" >
+                        <strong>Stop being confused. <br /> Start shopping with us!</strong>
+                    </h3>
+                    <p class="text" style="text-align: left; right: 100rem; background-color: #fff; ">We can help you in determining whether you've to purchase desired product or not based on strong algorithms.</p>
+
+                    
                 </div>
+            </div>
+            <hr>
+
+            <div id="linkbar " style="margin-top:10px;">
+                <form action='/submit' method='POST' style="text-align: left; right: 100rem;">
+                    {% csrf_token %}
+                
+                    <div class="col offset-lg-10 mx-auto text-center" style="width:100%;height: 100 px;">
+                    <h2 class="display-8 text-black section-heading" style="color: midnightblue;" >Enter the product link from Amazon.in</h2>
+                    
+
+                    <input type='text' name='link' placeholder='https://www.amazon.in/Product-name/dp/' style="margin: 2rem; width:70%; height: 60px; border-radius: 5px; "> 
+                    <br><button class='btn btn-dark btn-xl' role="button" data-aos="zoom-out" data-aos-duration="800" data-aos-once="true" type='submit'>Get Suggestion</button>
+                    </div>
+                </form>
             </div>
 
                 
-            <div class="col-lg-8 mx-auto">
-                <p class="text mb-5">We help you in determining whether you've to purchase your desired product or not based on strong algorithms.</p><a class="btn btn-primary btn-xl js-scroll-trigger" role="button" data-aos="zoom-out" data-aos-duration="800" data-aos-once="true" href="#about">Get Your Suggestion Now!</a></div>
         </div>
     </header>
-    <section class="text-center bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col offset-lg-8 mx-auto text-center" style="width: 1196px;height: 177px;">
-                    <h1 class="display-4 text-white section-heading">Enter the product link from Amazon.in</h1>
-                    <br>
-                    <hr class="light my-4">
-                </div>
-            </div>
-        </div>
-            {% comment %} <div class='text-center col offset-lg text-white'> 
-                Note: Please make sure entered URL is from Amazon.in 
-            </div> {% endcomment %}
-        <div id="linkbar " style="padding-top:80px;">
-            <form action='/submit' method='POST'>
-            {% csrf_token %}
-                <div>
-                    <input type='text' name='link' placeholder='https://www.amazon.in/Product-name/dp/' style="margin: 30px; width:70%; height: 60px; border-radius: 5px;"> 
-                    <br><button class='btn btn-light btn-xl' type='submit'>Submit</button>
-                </div>
-            </form>
-        </div>    
-
-
-
 
     </section>
     <section id="tutorial">
 
-                    <div class="col-lg-12 text-center" style="top:3rem;">
-                        <h2 class="section-heading">Tutorial</h2>
-                        <hr class="my-4">
-                        <div class="iframe-container" >
-                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x_PuXKELljE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                            </iframe>    
-        
-                            
-                    </div>
+        <div class="col-lg-12 text-center" style="top:3rem;">
+            <h2 class="section-heading">Tutorial</h2>
+            <hr style="color:black"  class="my-4">
+            <div class="iframe-container" >
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x_PuXKELljE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>    
+
+                
+        </div>
     </section>
   
     <section id="features" style="top:5rem;" >
@@ -120,7 +138,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Features</h2>
-                    <hr class="my-4">
+                    <hr style="color:black"  class="my-4">
                 </div>
             </div>
         </div>
@@ -153,7 +171,8 @@
             </div>
         </div>
     </section>
-        <section id="portfolio" class="p-0">
+    
+    <section id="sugest" class="p-0">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href='https://www.amazon.in/b?ie=UTF8&node=21676199031&store_ref=SB_A00974722GK2IV2E58YDM&pf_rd_p=51d30e03-5d7e-4ece-a66b-e1933e77766c&aaxitk=EAnnqOOP7Ebm4dcO73bOAw&hsa_cr_id=2663646780202&lp_mat_key=nord&lp_query=nord&lp_slot=auto-sparkle-hsa-tetris&ref_=sbx_be_s_sparkle_nafd_hl'}><img class="img-fluid" src={% static "assets/img/thumbnails/1.jpg"%}><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>OnePlus Nord 5g</span></div><div class="project-name"><span>Product is recommanded</span></div></div></div></a></div>
@@ -179,7 +198,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="my-4">
+                    <hr style="color:black"  class="my-4">
                 </div>  
             </div>
             <div class="row">

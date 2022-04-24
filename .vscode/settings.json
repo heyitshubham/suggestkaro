@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/25ef737f-54a8-4fea-abcc-6441d765a0f5/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/suggestkaro",
+    "appService.deploySubpath": "."
+}
